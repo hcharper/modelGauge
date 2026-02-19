@@ -1,51 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="fluid" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#d97706"/>
-      <stop offset="60%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#fbbf24"/>
-    </linearGradient>
-    <linearGradient id="tankBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#141420"/>
-      <stop offset="100%" stop-color="#0d0d15"/>
-    </linearGradient>
-    <linearGradient id="capGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#b45309"/>
-    </linearGradient>
-    <clipPath id="tankClip">
-      <rect x="10" y="14" width="44" height="46" rx="6"/>
-    </clipPath>
-  </defs>
-
-  <!-- Tank cap -->
-  <rect x="22" y="6" width="20" height="10" rx="3" fill="url(#capGrad)" opacity="0.85"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Cap -->
+  <rect x="11" y="2" width="10" height="5" rx="2" fill="#f59e0b"/>
   <!-- Tank body -->
-  <rect x="10" y="14" width="44" height="46" rx="6" fill="url(#tankBody)" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.4"/>
-
-  <!-- Fluid inside tank -->
-  <g clip-path="url(#tankClip)">
-    <!-- Fluid fill (~60%) -->
-    <rect x="10" y="32" width="44" height="28" fill="url(#fluid)" opacity="0.85"/>
-
-    <!-- Wave on top of fluid -->
-    <path d="M10,33 C18,29 26,37 32,33 C38,29 46,37 54,33 L54,36 C46,40 38,32 32,36 C26,40 18,32 10,36 Z" fill="#fbbf24" opacity="0.4"/>
-
-    <!-- Shimmer highlight -->
-    <rect x="15" y="36" width="4" height="20" rx="2" fill="white" opacity="0.15"/>
-    <rect x="21" y="38" width="2.5" height="14" rx="1.25" fill="white" opacity="0.08"/>
-  </g>
-
-  <!-- Graduation marks -->
-  <line x1="12" y1="28" x2="20" y2="28" stroke="white" stroke-opacity="0.15" stroke-width="1"/>
-  <line x1="12" y1="37" x2="18" y2="37" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-  <line x1="12" y1="46" x2="18" y2="46" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-
-  <!-- E / F labels -->
-  <text x="50" y="22" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="white" fill-opacity="0.25">E</text>
-  <text x="50" y="55" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="white" fill-opacity="0.25">F</text>
-
-  <!-- Subtle outer glow via border highlight -->
-  <rect x="10" y="14" width="44" height="46" rx="6" fill="none" stroke="#fbbf24" stroke-width="0.5" stroke-opacity="0.2"/>
+  <rect x="5" y="7" width="22" height="22" rx="3" fill="#0d0d15"/>
+  <!-- Fluid (inset to fit inside border) -->
+  <rect x="6" y="17" width="20" height="11" rx="2" fill="#f59e0b"/>
+  <!-- Border overlay -->
+  <rect x="5" y="7" width="22" height="22" rx="3" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.4"/>
 </svg>
