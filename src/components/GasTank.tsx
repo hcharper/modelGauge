@@ -35,6 +35,7 @@ export function GasTank({ model, state, mode }: GasTankProps) {
       className="flex flex-col items-center gap-2"
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
+      onClick={() => setShowTooltip((prev) => !prev)}
     >
       {/* Model name */}
       <div className="text-center">
@@ -44,7 +45,7 @@ export function GasTank({ model, state, mode }: GasTankProps) {
       {/* Tank container */}
       <div className="relative">
         <div
-          className={`relative w-16 h-40 rounded-lg border-2 overflow-hidden ${glowClass} ${shakeClass}`}
+          className={`relative w-14 h-32 sm:w-16 sm:h-40 rounded-lg border-2 overflow-hidden ${glowClass} ${shakeClass}`}
           style={{ borderColor: `${provider.color}60`, backgroundColor: '#0d0d15' }}
         >
           {/* Graduation marks */}
@@ -60,7 +61,7 @@ export function GasTank({ model, state, mode }: GasTankProps) {
 
           {/* Cap on top */}
           <div
-            className="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-2 rounded-t-sm"
+            className="absolute -top-1 left-1/2 -translate-x-1/2 w-7 h-1.5 sm:w-8 sm:h-2 rounded-t-sm"
             style={{ backgroundColor: `${provider.color}40` }}
           />
         </div>

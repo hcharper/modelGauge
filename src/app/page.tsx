@@ -9,27 +9,31 @@ import { StatsBar } from '@/components/StatsBar';
 import { Legend } from '@/components/Legend';
 import { useAnimationEngine } from '@/hooks/useAnimationEngine';
 import { useTankStates } from '@/hooks/useTankState';
-import { MODELS, PRESETS } from '@/data/models';
+import { MODELS, PRESETS, DEFAULT_MODELS } from '@/data/models';
 import { totalMessages, costPerMessage } from '@/lib/calculations';
 import { LOCAL_STORAGE_KEY, MIN_SELECTED_MODELS } from '@/lib/constants';
 import type { PlayState, SpeedMultiplier, UsageMode, SortMode } from '@/types';
 
 export default function Home() {
-  const [selected, setSelected] = useState<Set<string>>(() => new Set(PRESETS.flagships));
+  const [selected, setSelected] = useState<Set<string>>(() => new Set(DEFAULT_MODELS));
   const [playState, setPlayState] = useState<PlayState>('idle');
   const [speed, setSpeed] = useState<SpeedMultiplier>(1);
   const [mode, setMode] = useState<UsageMode>('chat');
   const [sort, setSort] = useState<SortMode>('cheapest');
   const [elapsed, setElapsed] = useState(0);
 
-  // Load selection from localStorage on mount
+  // Load selection from localStorage on mount, filtering out stale model IDs
   useEffect(() => {
     try {
+      const validIds = new Set(MODELS.map((m) => m.id));
       const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored) as string[];
-        if (Array.isArray(parsed) && parsed.length >= MIN_SELECTED_MODELS) {
-          setSelected(new Set(parsed));
+        if (Array.isArray(parsed)) {
+          const valid = parsed.filter((id) => validIds.has(id));
+          if (valid.length >= MIN_SELECTED_MODELS) {
+            setSelected(new Set(valid));
+          }
         }
       }
     } catch {

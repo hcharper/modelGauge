@@ -28,7 +28,7 @@ export function StatsBar({ tankStates, selectedIds }: StatsBarProps) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.3 }}
-      className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-wrap items-center justify-center gap-6 text-xs"
+      className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs"
     >
       <div className="flex items-center gap-2">
         <TrendingDown className="w-4 h-4 text-green-400" />

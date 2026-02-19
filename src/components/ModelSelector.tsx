@@ -13,7 +13,7 @@ interface ModelSelectorProps {
 }
 
 export function ModelSelector({ selected, onChange }: ModelSelectorProps) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const grouped = MODELS.reduce(
     (acc, model) => {
@@ -68,7 +68,7 @@ export function ModelSelector({ selected, onChange }: ModelSelectorProps) {
           Models ({selected.size} selected)
           {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
         </button>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <PresetButton label="Flagships" onClick={() => applyPreset(PRESETS.flagships)} />
           <PresetButton label="Budget" onClick={() => applyPreset(PRESETS.budget)} />
           <PresetButton label="All" onClick={() => applyPreset(PRESETS.all)} />
@@ -114,7 +114,7 @@ export function ModelSelector({ selected, onChange }: ModelSelectorProps) {
                           <button
                             key={model.id}
                             onClick={() => toggleModel(model.id)}
-                            className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
                               isSelected
                                 ? `${meta.bgClass} bg-opacity-20 ${meta.borderClass} text-white`
                                 : 'border-[var(--color-border)] text-neutral-400 hover:text-neutral-200 hover:border-neutral-500'

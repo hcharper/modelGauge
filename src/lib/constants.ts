@@ -21,4 +21,4 @@ export const MESSAGES_PER_SECOND_BASE = 2;
 
 export const MIN_SELECTED_MODELS = 2;
 
-export const LOCAL_STORAGE_KEY = 'aimeter-selected-models';
+export const LOCAL_STORAGE_KEY = 'aimeter-selected-models-v2';

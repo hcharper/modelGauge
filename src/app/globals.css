@@ -73,3 +73,8 @@ body {
 .glow-red {
   box-shadow: 0 0 20px rgba(239, 68, 68, 0.4), inset 0 0 15px rgba(239, 68, 68, 0.1);
 }
+
+/* Mobile touch optimization */
+button {
+  touch-action: manipulation;
+}

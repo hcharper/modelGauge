@@ -25,7 +25,7 @@ export function TankGrid({ selectedIds, tankStates, mode }: TankGridProps) {
 
   return (
     <LayoutGroup>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-6 justify-items-center py-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-3 sm:gap-6 justify-items-center py-3 sm:py-6">
         <AnimatePresence mode="popLayout">
           {MODELS.filter((m) => selectedIds.has(m.id)).map((model) => {
             const state = stateMap.get(model.id);

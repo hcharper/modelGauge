@@ -37,10 +37,10 @@ export function ControlBar({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.2 }}
-      className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-wrap items-center gap-4"
+      className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4"
     >
       {/* Play controls */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
         {playState === 'playing' ? (
           <ControlButton onClick={onPause} title="Pause">
             <Pause className="w-4 h-4" />
@@ -55,10 +55,10 @@ export function ControlBar({
         </ControlButton>
       </div>
 
-      <div className="w-px h-6 bg-[var(--color-border)]" />
+      <div className="w-px h-6 bg-[var(--color-border)] hidden sm:block" />
 
       {/* Speed */}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start flex-wrap">
         <span className="text-xs text-neutral-500 mr-1">Speed</span>
         {SPEED_OPTIONS.map((s) => (
           <button
@@ -75,10 +75,10 @@ export function ControlBar({
         ))}
       </div>
 
-      <div className="w-px h-6 bg-[var(--color-border)]" />
+      <div className="w-px h-6 bg-[var(--color-border)] hidden sm:block" />
 
       {/* Mode toggle */}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start">
         <span className="text-xs text-neutral-500 mr-1">Mode</span>
         <button
           onClick={() => onModeChange('chat')}
@@ -102,10 +102,10 @@ export function ControlBar({
         </button>
       </div>
 
-      <div className="w-px h-6 bg-[var(--color-border)]" />
+      <div className="w-px h-6 bg-[var(--color-border)] hidden sm:block" />
 
       {/* Sort */}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start">
         <span className="text-xs text-neutral-500 mr-1">Sort</span>
         <SortButton label="Cheapest" active={sort === 'cheapest'} onClick={() => onSortChange('cheapest')} />
         <SortButton label="Expensive" active={sort === 'expensive'} onClick={() => onSortChange('expensive')} />
