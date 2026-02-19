@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Meter - Gas Tank Cost Visualizer",
+  title: "Model Gauge - AI Cost Visualizer",
   description:
     "See how fast $100 drains across 15+ AI models. Visual gas tank comparison for OpenClaw.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
