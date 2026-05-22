@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Model Gauge - AI Cost Visualizer",
   description:
-    "See how fast $100 drains across 15+ AI models. Visual gas tank comparison for OpenClaw.",
+    "See how fast $100 drains across 27 AI models from 10 providers. Visual gas tank comparison of live API pricing, built for OpenClaw.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },

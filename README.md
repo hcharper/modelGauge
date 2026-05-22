@@ -2,14 +2,14 @@
 
 **How fast does $100 drain across AI models?**
 
-Model Gauge is an interactive cost visualizer that compares AI model pricing using animated gas tank metaphors. Select models from 10+ providers, hit play, and watch your $100 budget drain in real-time — cheaper models last longer, expensive ones empty fast.
+Model Gauge is an interactive cost visualizer that compares AI model pricing using animated gas tank metaphors. Select from 27 models across 10 providers, hit play, and watch your $100 budget drain in real-time — cheaper models last longer, expensive ones empty fast.
 
 Built for [OpenClaw](https://github.com/harperWebServicesLLC).
 
 ## Features
 
 - **Animated gas tanks** — Each AI model is a tank that drains at a rate proportional to its per-message cost. Fluid level, wave animations, shimmer effects, and color-coded glow states (green/amber/red) give immediate visual feedback.
-- **21 models across 10 providers** — OpenAI, Anthropic, Google, DeepSeek, xAI, Mistral, Meta, Moonshot, MiniMax, and Zhipu AI. Each provider has a unique color.
+- **27 models across 10 providers** — OpenAI, Anthropic, Google, DeepSeek, xAI, Mistral, Meta, Moonshot, MiniMax, and Zhipu AI. Each provider has a unique color. Prices are verified against official provider pricing pages (current as of May 2026).
 - **Two usage modes** — *Chat* (500 input / 1,500 output tokens per message) and *Code Gen* (300 input / 3,000 output tokens per message). Switching modes resets the animation.
 - **Playback controls** — Play, pause, and reset. Speed multipliers from 0.5x to 10x.
 - **Sorting** — Sort tanks by cheapest first, most expensive first, or grouped by provider.
@@ -28,8 +28,8 @@ Built for [OpenClaw](https://github.com/harperWebServicesLLC).
 ### Install
 
 ```bash
-git clone https://github.com/harperWebServicesLLC/aimeter.git
-cd aimeter
+git clone https://github.com/hcharper/modelGauge.git
+cd modelGauge
 npm install
 ```
 
@@ -90,7 +90,7 @@ src/
 
 ### The Gas Tank Metaphor
 
-Each AI model gets a gas tank filled with $100. When you press play, every tank drains at its own rate based on how much each message costs. A cheap model like DeepSeek V3 ($0.00028/msg in Chat mode) lasts for ~357,000 messages, while a premium model like o1 ($0.0975/msg) runs dry after ~1,025 messages.
+Each AI model gets a gas tank filled with $100. When you press play, every tank drains at its own rate based on how much each message costs. A cheap model like Llama 3.1 8B ($0.000145/msg in Chat mode) lasts for ~689,000 messages, while a premium model like GPT-5.5 ($0.0475/msg) runs dry after ~2,105 messages.
 
 ### Cost Calculation
 
